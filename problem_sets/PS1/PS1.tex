@@ -1,0 +1,384 @@
+
+
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+%%%%%%%%%%%%%%%%
+% Header for attribution
+%%%%%%%%%%%%%%%%
+
+%\pagestyle{fancy}
+%
+%\fancyhead{}
+%
+%\renewcommand{\headrulewidth}{0.25pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\headsep = 30pt
+%\footskip = 30pt
+%
+%\chead{{\footnotesize Derivative of \href{http://www.opeintro.org}{\textit{OpenIntro}} project}}
+
+%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%
+
+\usepackage[sc]{mathpazo}
+%\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2.2cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{colortbl}
+\usepackage{xspace}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{changepage}
+\usepackage{textcomp}
+\usepackage{endnotes}
+\usepackage{breakurl}
+%SKM
+\usepackage{setspace}
+
+%%%%%%%%%%%%%%%%
+% Colors and hyperref
+%%%%%%%%%%%%%%%%
+
+\definecolor{oiB}{rgb}{.337,.608,.741}
+\definecolor{oiR}{rgb}{.941,.318,.200}
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiY}{rgb}{.957,.863,0}
+
+\definecolor{oiP}{rgb}{0.8,0.25,0.33}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true, bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=2, breaklinks=false, pdfborder={0 0 1}, backref=false, colorlinks=true, linkcolor = oiB, urlcolor= oiB]{hyperref}
+\hypersetup{pdfstartview={XYZ null null 1}}
+
+%%%%%%%%%%%%%%%%%
+%% Color section headings
+%%%%%%%%%%%%%%%%%
+
+\allsectionsfont{\color{oiB}}
+ 
+%%%%%%%%%%%%%%%%
+% Exercise environment
+%%%%%%%%%%%%%%%%
+
+\newenvironment{exercise}
+{
+\addvspace{5mm}
+\begin{adjustwidth}{0em}{3em}
+\begin{itemize}\item[]\refstepcounter{equation}\noindent\normalsize\textbf{\textcolor{oiB}{Exercise \theexercise}}
+}
+{\normalsize
+
+\addvspace{3mm}
+\end{itemize}
+\end{adjustwidth}
+}
+
+\newcommand\theexercise{\arabic{equation}}
+
+%%%%%%%%%%%%%%%%
+% Menu items
+%%%%%%%%%%%%%%%%
+
+\newcommand{\menu}[1]{\textsf{#1}}
+
+%%%%%%%%%%%%%%%%
+% Formatted url
+%%%%%%%%%%%%%%%%
+
+\newcommand{\web}[1]{\urlstyle{same}\textit{\url{#1}}}
+
+%%%%%%%%%%%%%%%%
+% Footnote using symbols
+% 1 - *
+% 2 - dagger
+% 3 - double dagger
+% 4 - ... 9 (see page 175 of the latex manual)
+% http://help-csli.stanford.edu/tex/latex-footnotes.shtml
+%%%%%%%%%%%%%%%%
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+%%%%%%%%%%%%%%%%
+% Non-numbered footnote for license and attribution
+%%%%%%%%%%%%%%%%
+
+\newcommand{\license}[1]{\let\thefootnote\relax\footnotetext{#1}}
+
+%%%%%%%%%%%%%%%%
+% Get an appropriate tilde in the R chunks (along with code in setup chunk)
+%%%%%%%%%%%%%%%%
+
+\newcommand{\mytilde}{\lower.80ex\hbox{\char`\~}\xspace}
+
+%%%%%%%%%%%%%%%%
+% Set padding in code chunk boxes
+%%%%%%%%%%%%%%%%
+
+\setlength\fboxsep{2mm}
+
+%%%%%%%%%%%%%%%%
+% Place spacing between text and code chunk boxes
+%%%%%%%%%%%%%%%%
+
+\ifdefined\knitrout
+  \renewenvironment{knitrout}{
+    \vspace{1em}
+  }{
+    \vspace{1em}
+  }
+\else
+\fi
+
+%%%%%%%%%%%%%%%%
+% Redefine syntax highlighting commands to change the color and font for inline use
+%%%%%%%%%%%%%%%%
+
+\renewcommand{\hlnum}[1]{\textcolor[rgb]{0.387,0.581,0.148}{\texttt{#1}}}  % number
+\renewcommand{\hlstr}[1]{\textcolor[rgb]{0.65,0.50,0.39}{\texttt{#1}}}	% string
+\renewcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}	% comment
+\renewcommand{\hlopt}[1]{\textcolor[rgb]{0.31,0.65,0.76}{\texttt{#1}}}%
+\renewcommand{\hlstd}[1]{\textcolor[rgb]{0.387,0.581,0.148}{\texttt{#1}}}%
+\renewcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}	
+\renewcommand{\hlkwb}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\renewcommand{\hlkwc}[1]{\textcolor[rgb]{0.31,0.41,0.53}{\texttt{#1}}}	% argument
+\renewcommand{\hlkwd}[1]{\textcolor[rgb]{0.11,0.53,0.93}{\texttt{#1}}}	% function and keyword ($)
+
+
+%%%%%%%%%%%%%%%%
+% SKM Stuff
+%%%%%%%%%%%%%%%%
+\newcommand{\ans}[1]{{\color{oiP}{#1}}}
+\newcommand{\bs}{\underline{\hspace{0.5in}} }
+\newcommand{\bsl}{\underline{\hspace{1.0in}} }
+\newcommand{\bsans}[1]{\underline{\hspace{0.2in}\color{oiP}{#1}\hspace{0.2in}}}
+\newcommand{\tips}[1]{{\textsc{\Large{\color{oiP}{#1}}}}}
+\newcommand{\pts}[1]{{\textbf{\color{oiP}{\lbrack#1\rbrack}}}}
+\newcommand{\bsval}[1]{\underline{\hspace{0.2in}{#1}\hspace{0.2in}}}
+
+
+
+%\input{"C:/Users/smcclin/Documents/Labs/labStyleNew.tex"}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+\section*{Homework 1: Introduction to R and Statistics Basics}
+
+
+%\subsection*{Practice}
+%\begin{enumerate}
+%%----------------------------------------------------------------------------------------------------------
+%\item 
+%Write down the first name, last name, and email address of all group members.
+%\item
+%Discuss what makes a lab group work well together.  List three things that you all agree to do for your QTM 100 lab group.
+%\item
+%Come up with a lab group name.
+%\item
+%Explore the \hlstd{yrbss2013} data set.  Report 5 different facts OR 3 different facts and 1 figure (with an interpretation or explanation) from this data set \underline{and} the R commands that you used to produce the information.  You should use the ``QTM 100 R Cheat Sheet'' in the Lab section of Blackboard for help - the \emph{Working with Data}, \emph{Summary Statistics}, and \emph{Figures} section will have useful commands.   
+%\begin{itemize}
+%  \item
+%  \emph{Example for a fact:}
+%  \item[]
+%  R code: \begin{verbatim}
+%    mean(yrbss2013$height_m)
+%    \end{verbatim}
+%  \item[]
+%  Result: The average height is 1.69 meters.
+%  \item
+%  \emph{Example for a figure:}
+%  \item[]
+%  R code: \begin{verbatim}
+%    plot(yrbss2013$height_m,yrbss2013$weight_kg)
+%    \end{verbatim}
+%  \item[]
+%  Result: This command produces a scatterplot that shows the relationship between height in meters and weight in kilograms, which demonstrates a positive trend.\\
+%% \includegraphics[width=2 in]{scatter.pdf}\\ 
+%\end{itemize}
+%\item
+%By the end of lab, post items 1-4 in the ``Lab 1 group work'' discussion forum on Blackboard.  The title of your post should include the \underline{time of your lab} and your \underline{lab group name}.  
+%\end{enumerate}
+%
+%\clearpage
+
+
+
+
+%\subsection*{The Data: Youth Risk Behavior Surveillance System}
+
+%The \href{http://www.cdc.gov/healthyyouth/yrbs/index.htm}{Youth Risk Behavior Surveillance System (YRBSS)} has been conducted every two years since 1991 by the Centers for Disease Control and Prevention (CDC) in order to obtain information from adolescents regarding trends in risky behavior, such as smoking, drinking, drug use, diet, and physical activity.  In 2013, 47 states participated in this school-based survey, yielding 13,583 respondents and 213 variables.   Full survey and data documentation can be accessed on the CDC \href{http://www.cdc.gov/healthyyouth/yrbs/data/index.htm}{website}.  A subset of this data set which has no missing data for 17 selected variables is provided in the file \texttt{yrbss2013.csv}\footnote{The variables \hlstd{days\textunderscore smoke} and \hlstd{days\textunderscore drink} were originally coded in categories of `0 days', `1 or 2 days', `3 to 5 days', `6 to 9 days', `10 to 19 days', `20 to 29 days', and `All 30 days'.  The values provided in this data set were randomly generated according to the category specified.}.\\
+%
+%\subsection*{Background}
+%Food server's tips in restaurants may be influenced by
+%many factors including the nature of the restaurant,
+%size of the party, table locations in the restaurant, ... To
+%make appropriate assignments (which tables the food
+%server waits on) for the food servers, restaurant
+%managers need to know what these factors are.
+%In one restaurant, a food server recorded the following
+%data on all customers they had served during a interval
+%of two and a half months in early 1990, resulting in
+%observations on 244 dining parties.
+%
+%
+%\subsection*{The Data Description}
+%\emph{Source:} Bryant, P.G. and Smith, M. A. (1995), Practical Data Analysis: Case Studies on Business Statistics, Richard D. Irwin Publishing, Homewood, IL.  The data set is \texttt{tips.csv}.
+%
+%
+%\begin{tabular}{r|l}
+%\hlstd{totbill\textunderscore dollar} & \emph{Total bill, including tax}\\
+%\hlstd{tip\textunderscore dollar} &\emph{Tip } \\
+%\hlstd{sex} &  \emph{Sex of person paying bill (M, F)}\\
+%\hlstd{smoker\textunderscore kg} &  \emph{Smoker in party? (No, Yes)} \\
+%\hlstd{day} &  \emph{Thur, Fri, Sat, Sun } \\
+%\hlstd{time} & \emph{Day, Night }\\
+%\hlstd{size} & \emph{Size of the party} \\
+%\end{tabular}
+
+\subsection*{Practice}
+\begin{enumerate}
+%----------------------------------------------------------------------------------------------------------
+
+\item
+A private school counselor was curious about the average of IQ of the students in her school and took a random sample of 25 students' IQ scores. The following is the data set
+\begin{verbatim}
+  y < -c(105,69,86,100,82,111,104,110,87,108,87,90,94,113,112, 
+     98,80,97,95,111,114,89,95,126,98)
+    \end{verbatim}
+Find a 90\% confidence interval for the student IQ in the school assuming the population of IQ from which our random sample has been selected is normally distributed. 
+
+
+\item
+A private school counselor was curious  whether  the average of IQ of the students in her school is higher than the average IQ score 100 among all the schools in the country. She took a random sample of 25 students' IQ scores. The following is the data set
+\begin{verbatim}
+  y <- c(105,69,86,100,82,111,104,110,87,108,87,90,94,113,112, 
+     98,80,97,95,111,114,89,95,126,98)
+    \end{verbatim}
+Conduct a test with 0.05 significance level assuming the population of IQ from which our random sample has been selected is normally distributed. 
+
+\item
+Assume $y$ is variable with values 1,2,3,4 standing for ``Freshman", ``Sophomore", ``Junior", and ``Senior", convert $y$ from numbers to characters in \texttt{R}:
+\begin{verbatim}
+    y <- c(1,2,1,3,4,1,1,4,2,1,3,4,3,2,1,3,4,1,2,3,1,1,2,1,1,3,4)
+\end{verbatim}
+
+Researchers are curious about what affects the education expenditure on public education. The following is availabe variables in a data set about the education expenditure. 
+
+\begin{tabular}{r|l}
+\hlstd{State} &\emph{50 states in US} \\
+\hlstd{Y } & \emph{per capita expenditure on public education}\\
+\hlstd{X1 } &\emph{per capita personal income} \\
+\hlstd{X2} &  \emph{Number of residents per thousand under 18 years of age}\\
+\hlstd{X3} &  \emph{Number of people per thousand residing in urban areas} \\
+\hlstd{Region} &  \emph{1=Northeast, 2= North Central, 3= South, 4=West} \\
+\end{tabular}
+
+Explore the \hlstd{expenditure} data set and import data into R
+
+\begin{itemize}
+  \item[]
+ \begin{verbatim}
+    expenditure <- read.table("your directory/expenditure.txt",header=T)
+    \end{verbatim}
+\end{itemize}
+
+\item
+Which graph is appropriate to visualize the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them? Produce the graph and describe the relationships among them.
+
+\item
+Which graph is appropriate to visualize the relationship between \emph{Y} and \emph{Region}? On average, which region does have the highest per capita expenditure on public education?
+
+\item
+Which graph is appropriate to visualize the relationship between  \emph{Y} and \emph{X1}? Produce this graph and describe the relationship.  Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
+
+
+\item 
+Write down your homework in \emph{Rmarkdown} and generate it to a HTML document with your title and your name.
+
+\end{enumerate}
+
+
+
+
+
+%\begin{tabular}{rll}
+%\hlstd{seatbelt2} &calculated variable: \hlstd{seatbelt} never vs otherwise \\
+%\hlstd{ride\textunderscore drunkdriver} & \emph{Q10: During the past 30 days, have you ridden in a car or other vehicle driven by} \\
+% & \emph{someone who had been drinking alcohol?} \\
+%\hlstd{drive\textunderscore drunk} & \emph{Q11: During the past 30 days, how many times did you drive a car or other vehicle when}\\
+%&\emph{you had been drinking alcohol?} \\
+%\hlstd{drive\textunderscore text} & \emph{Q12: During the past 30 days, on how many days did you text or e-mail while driving a car}\\
+%&\emph{or other vehicle?} \\
+%\hlstd{carried\textunderscore weapon} & \emph{Q13: During the past 30 days, did you carry a weapon such as a gun, knife, or club?} \\
+%\hlstd{unsafe\textunderscore school} & \emph{Q16: During the past 30 days, did you not go to school because you felt you}\\
+%&\emph{would be unsafe at school or on your way to or from school?} \\
+%\hlstd{bullied} & \emph{Q24: During the past 12 months, have you ever been bullied on school property?}\\
+%\hlstd{sad} & \emph{Q26: During the past 12 months, did you ever feel so sad or hopeless almost every day for two}\\
+%&\emph{weeks or more in a row that you stopped doing some usual activities?}\\
+%\hlstd{days\textunderscore smoke} & \emph{Q33: During the past 30 days, on how many days did you smoke cigarettes?}\\
+%\hlstd{days\textunderscore drink} & \emph{Q43: During the past 30 days, on how many days did you have at least one drink of alcohol?}\\
+%\end{tabular}
+
+
+\end{document}

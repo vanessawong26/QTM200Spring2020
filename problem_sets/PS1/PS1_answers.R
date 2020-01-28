@@ -60,12 +60,12 @@ mean(y)
 #mean of sample is 98.44
 sd(y)
 #standard deviation of sample is 13.09
-ts <- ((98.44-100)/(13.09))
+ts <- ((100-98.44)/(13.09))
 #sample size 
 n <- length(y)
 # n=25 therefore df = 24
 #test statistic = -0.119
-pt(abs(-0.119), df=24, lower.tail=F)
+pt(abs(0.119), df=24, lower.tail=F)
 # ANSWER: p-value = 0.453 > 0.05 therefore sample mean is not significantly greater than 100
 
 #####################
@@ -114,4 +114,7 @@ boxplot(expenditure$Y ~ expenditure$fourregions,
 plot(expenditure$X1, expenditure$Y, 
      xlab="Per capita personal income", ylab="Per capita expenditure on public education")
 abline(lm(expenditure$Y ~ expenditure$X1))
+
+# PLOT 6 (color plot)
+install.packages("car")
 

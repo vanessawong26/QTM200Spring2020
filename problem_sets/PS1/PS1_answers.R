@@ -47,6 +47,7 @@ lower_90 <- sample_mean - (z90 * (sample_sd/sqrt(n)))
 upper_90 <- sample_mean + (z90 * (sample_sd/sqrt(n)))
 confint90  <- c(lower_90, upper_90)
 # ANSWER: 90% confidence interval is (94.1, 102.7)
+# INTERPRETATION: We are 90% confident that that true average IQ of students at her school lies between 94.1 and 102.7.
 
 #####################
 # Problem 2
@@ -66,7 +67,7 @@ n <- length(y)
 # n=25 therefore df = 24
 #test statistic = -0.119
 pt(abs(0.119), df=24, lower.tail=F)
-# ANSWER: p-value = 0.453 > 0.05 therefore sample mean is not significantly greater than 100
+# ANSWER/INTERPRETATION: p-value = 0.453 > 0.05 therefore sample mean is not significantly greater than 100
 
 #####################
 # Problem 3
@@ -115,6 +116,11 @@ plot(expenditure$X1, expenditure$Y,
      xlab="Per capita personal income", ylab="Per capita expenditure on public education")
 abline(lm(expenditure$Y ~ expenditure$X1))
 
-# PLOT 6 (color plot)
+# PLOT 6 (color plot) Please plot the relationship between Y and X1? 
+#Describe this graph and the rela- tionship. Reproduce the above graph 
+#including one more variable Region and display different regions with 
+#different types of symbols and colors.
 install.packages("car")
-
+library("car")
+scatterplotMatrix()
+pairs(expenditure)

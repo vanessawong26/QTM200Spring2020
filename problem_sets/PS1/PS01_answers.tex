@@ -90,6 +90,7 @@ A private school counselor was curious about the average of IQ of the students i
 \item
 ANSWER: The 90\% confidence interval is (94.1, 102.7). 
 \item INTERPRETATION: We are 90\% confident that that true average IQ of students at her school lies between 94.1 and 102.7.
+\lstinputlisting[language=R, firstline=41, lastline=50]{PS1_answers.R}
 \end{itemize}
 
 \vspace{1cm}
@@ -100,6 +101,11 @@ A private school counselor was curious  whether  the average of IQ of the studen
 \vspace{.5cm}
 
 \noindent Conduct a test with 0.05 significance level assuming the population of IQ from which our random sample has been selected is normally distributed. 
+\vspace{.5cm}
+
+ANSWER: p-value = 0.278 greater than 0.05, therefore sample mean is not significantly greater than 100
+\lstinputlisting[language=R, firstline=57, lastline=74]{PS1_answers.R}
+
 
 \vspace{1cm}
 	\section*{Question 3 (50 points)}
@@ -107,6 +113,8 @@ Assume $y$ is variable with values 1,2,3,4 standing for ``Freshman", ``Sophomore
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=52, lastline=52]{PS1.R}  
 \vspace{.5cm}
+\noindent ANSWER: 
+\lstinputlisting[language=R, firstline=83, lastline=92]{PS1_answers.R}
 
 \noindent Researchers are curious about what affects the education expenditure on public education. The following is availabe variables in a data set about the education expenditure. \\
 \vspace{.5cm}
@@ -126,24 +134,31 @@ Assume $y$ is variable with values 1,2,3,4 standing for ``Freshman", ``Sophomore
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=54, lastline=54]{PS1.R}  
 \vspace{.5cm}
+
 \begin{itemize}
+\begin{figure}
+	\includegraphics[width=\linewidth]{plot1.jpeg}
+	\caption{Y and X1: Moderate, linear, positive correlation}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=\linewidth]{plot2.jpeg}
+	\caption{Y and X2: Weak, negative, non-linear correlation}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=\linewidth]{plot3.jpeg}
+	\caption{Y and X3: Weak positive correlation}
+\end{figure}
+\vspace{.5cm}
+\begin{figure}
+	\includegraphics[width=\linewidth]{plot4.jpeg}
+	\caption{On average, the Western region has the highest per capita expenditure on public education}
+\end{figure}
 
-\item
-Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them? Describe the graph and the relationships among them.
+\begin{figure}
+	\includegraphics[width=\linewidth]{plot5.jpeg}
+	\caption{Moderate, linear, positive correlation between per capita expenditure on public education and per capita personal income}
+\end{figure}
 \vspace{.5cm}
-\item
-Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region does have the highest per capita expenditure on public education?
-\vspace{.5cm}
-\item
-Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
+\lstinputlisting[language=R, firstline=98, lastline=139]{PS1_answers.R}
 \end{itemize}
-
-\vspace{.5cm}
-\begin{itemize}
-	\item
-R code:
-\lstinputlisting[language=R, firstline=1, lastline=117]{PS1_answers.R} 
-\end{itemize}
-
-
 \end{document}\

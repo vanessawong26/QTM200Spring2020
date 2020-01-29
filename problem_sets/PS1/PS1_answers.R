@@ -60,44 +60,61 @@ y <- c(105, 69, 86, 100, 82, 111, 104, 110, 87, 108, 87, 90, 94, 113, 112, 98, 8
 mean(y)
 #mean of sample is 98.44
 sd(y)
-#standard deviation of sample is 13.09
-ts <- ((100-98.44)/(13.09))
 #sample size 
 n <- length(y)
+#standard deviation of sample is 13.09
+teststata <- (98.44-100)
+teststatb <- 13.09/(sqrt(n))
+teststatistic <- ((teststata)/(teststatb))
+#test statistic = -0.596
 # n=25 therefore df = 24
 #test statistic = -0.119
-pt(abs(0.119), df=24, lower.tail=F)
-# ANSWER/INTERPRETATION: p-value = 0.453 > 0.05 therefore sample mean is not significantly greater than 100
+1-pt(abs(-0.596), df=24)
+# p-value = 0.278
+# ANSWER/INTERPRETATION: p-value = 0.278 > 0.05 therefore sample mean is not significantly greater than 100
 
 #####################
 # Problem 3
 #####################
 
 y <- c(1, 2, 1, 3, 4, 1, 1, 4, 2, 1, 3, 4, 3, 2, 1, 3, 4, 1, 2, 3, 1, 1, 2, 1, 1, 3, 4)
+length(y)
+str(y)
+highschool[y==1] <- "Freshman"
+highschool[y==2] <- "Sophomore"
+highschool[y==3] <- "Junior"
+highschool[y==4] <- "Senior"
+str(highschool)
+highschool[1:10]
+highschool
+#Recode numerical vector y so that values are assigned to corresponding categories
+
+#####
 
 expenditure <- read.table("expenditure.txt", header=T)
+dev.off()
+dev.off()
 
 # PLOT 1
 plot(expenditure$X1, expenditure$Y, 
-     xlab="Per capita personal income", ylab="Per capita expenditure on public education")
+     xlab="Per capita personal income", ylab="Per capita expenditure on public ed.")
 abline(lm(expenditure$Y ~ expenditure$X1))
-#Moderate positive correlation
+#Moderate, linear, positive correlation
 
 # PLOT 2
 plot(expenditure$X2, expenditure$Y, 
-     xlab="Number of residents per thousand under 18 years of age", ylab="Per capita expenditure on public education")
+     xlab="Number of residents per thousand under 18 years of age", ylab="Per capita expenditure on public ed.")
 abline(lm(expenditure$Y ~ expenditure$X2))
 #Weak negative correlation
 
 # PLOT 3
 plot(expenditure$X3, expenditure$Y, 
-     xlab="Number of people per thousand residing in urban areas", ylab="Per capita expenditure on public education")
+     xlab="Number of people per thousand residing in urban areas", ylab="Per capita expenditure on public ed.")
 abline(lm(expenditure$Y ~ expenditure$X3))
 #Weak positive correlation
 
 
 # PLOT 4
-
 expenditure$fourregions <- NA
 expenditure$fourregions <- factor(NA, levels=c("Northeast", "North Central", "South", "West"))
 expenditure$fourregions[expenditure$Region==1] <- "Northeast"
@@ -111,16 +128,14 @@ boxplot(expenditure$Y ~ expenditure$fourregions,
 # On average, the Western region has the highest per capita expenditure on public education
 
 # PLOT 5
-
 plot(expenditure$X1, expenditure$Y, 
      xlab="Per capita personal income", ylab="Per capita expenditure on public education")
 abline(lm(expenditure$Y ~ expenditure$X1))
 
-# PLOT 6 (color plot) Please plot the relationship between Y and X1? 
-#Describe this graph and the rela- tionship. Reproduce the above graph 
-#including one more variable Region and display different regions with 
-#different types of symbols and colors.
-install.packages("car")
-library("car")
-scatterplotMatrix()
-pairs(expenditure)
+# PLOT 6
+dev.off()
+plot(expenditure$X1, expenditure$Y, 
+             xlab="Per capita personal income", ylab="Per capita expenditure on public education", col=expenditure$Region, pch=expenditure$Region)
+legend(x=1000, y=140, c("Northeast","North Central","South","West"), cex=0.6, col=c("black","red","green","blue"),pch=c(1:4))
+
+     

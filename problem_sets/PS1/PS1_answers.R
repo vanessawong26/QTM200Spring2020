@@ -123,7 +123,7 @@ expenditure$fourregions[expenditure$Region==3] <- "South"
 expenditure$fourregions[expenditure$Region==4] <- "West"
 boxplot(expenditure$Y ~ expenditure$fourregions, 
         xlab= "Region", 
-        ylab= "Per capita expenditure on public education")
+        ylab= "Per capita expenditure on public ed.")
 
 # On average, the Western region has the highest per capita expenditure on public education
 
@@ -135,7 +135,7 @@ abline(lm(expenditure$Y ~ expenditure$X1))
 # PLOT 6
 dev.off()
 plot(expenditure$X1, expenditure$Y, 
-             xlab="Per capita personal income", ylab="Per capita expenditure on public education", col=expenditure$Region, pch=expenditure$Region)
+             xlab="Per capita personal income", ylab="Per capita expenditure on public ed.", col=expenditure$Region, pch=expenditure$Region)
 legend(x=1000, y=140, c("Northeast","North Central","South","West"), cex=0.6, col=c("black","red","green","blue"),pch=c(1:4))
 
      

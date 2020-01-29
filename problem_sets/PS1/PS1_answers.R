@@ -69,9 +69,9 @@ teststatistic <- ((teststata)/(teststatb))
 #test statistic = -0.596
 # n=25 therefore df = 24
 #test statistic = -0.119
-1-pt(abs(-0.596), df=24)
-# p-value = 0.278
-# ANSWER/INTERPRETATION: p-value = 0.278 > 0.05 therefore sample mean is not significantly greater than 100
+pt(abs(-0.596), df=24)
+# p-value = 0.7216
+# ANSWER/INTERPRETATION: p-value = 0.7216 > 0.05 therefore sample mean is not significantly greater than 100
 
 #####################
 # Problem 3

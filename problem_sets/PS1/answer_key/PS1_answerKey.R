@@ -84,18 +84,18 @@ summary(expenditure)
 # create a matrix scatter plot to 
 # visualize the relationship among Y, X1, X2 and X3
 # so not the first column of expenditure
-pdf("plot_3b.pdf")
+pdf("answer_key/plot_3b.pdf")
 pairs(expenditure[,2:5], main = "")
 dev.off()
 
 # generate boxplot with comparisons for different values of Region
-pdf("plot_3c.pdf")
+pdf("answer_key/plot_3c.pdf")
 boxplot(expenditure$Y~expenditure$Region, xlab="Region", ylab="Y", main="")
 dev.off()
 
 # create scatterplot of Y and X1 
 # basic and then differentiate color by region
-pdf("plot_3d1.pdf")
+pdf("answer_key/plot_3d1.pdf")
 ggplot(expenditure, aes(x=X1, y=Y)) + 
   geom_point() + labs(y="Y\n", x="\nX1") +
   theme_bw() + 
@@ -106,7 +106,7 @@ dev.off()
 # make sure that Region is categorical
 expenditure$Region <- as.factor(expenditure$Region)
 
-pdf("plot_3d2.pdf")
+pdf("answer_key/plot_3d2.pdf")
 ggplot(expenditure, aes(x=X1, y=Y, colour=Region)) + 
   geom_point()  +labs(y="Y\n", x="\nX1") +
   theme_bw() + 

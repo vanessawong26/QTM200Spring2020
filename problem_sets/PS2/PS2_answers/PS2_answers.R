@@ -66,7 +66,7 @@ teststat
 #Calculating p-value
 #df = (3-1)(2-1) = 2
 pchisq(teststat, df=2, lower.tail=FALSE)
-#p-value = 0.15 > 0.1, therefore we conclude that there is not enough evidence to reject (i.e. fail to reject) the null hypothesis that x and y are statistically independent.
+#p-value = 0.1502 > 0.1, therefore we conclude that there is not enough evidence to reject (i.e. fail to reject) the null hypothesis that x and y are statistically independent.
 
 #Calculating standardized residuals
 r_unsquared <- (copbribe-copbribeexpected)
@@ -152,9 +152,9 @@ setwd("~/GitHub/QTM200Spring2020/problem_sets/PS2") #copy/paste from getwd
 getwd() #double check
 library(readr)
 fly <- read.csv("fruitfly.csv")
-summary(fly)
-hist(fly$thorax)
-#The distribution of overall fruitfly thorax appears to be bimodal and approximately normal.
+summary(fly$lifespan)
+hist(fly$lifespan)
+#The distribution of overall fruitfly lifespan appears to be bimodal and approximately normal.
 
 #Plot thorax vs. lifespan
 plot(fly$thorax, fly$lifespan,

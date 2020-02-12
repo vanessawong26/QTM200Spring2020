@@ -3,12 +3,6 @@
 ## Multiple Regression in R                        ##
 #####################################################
 
-#######################
-# set working directory
-# load data
-# and load libraries
-#######################
-
 # remove objects
 rm(list=ls())
 # detach all libraries

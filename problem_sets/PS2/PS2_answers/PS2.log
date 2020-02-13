@@ -1029,6 +1029,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sex/listings/lstlang2.sty
 File: lstlang2.sty 2019/02/27 1.8b listings language file
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang3.sty
@@ -1047,47 +1048,45 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 41.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 106.
-(./PS2_answers.R) [2] (./PS2_answers.R)
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 107.
+(./PS2_answers.R) [2]
 
- []
+./PS2.tex:112: LaTeX Error: Can be used only in preamble.
 
-[3]
-<../women_desc.png, id=88, 750.805pt x 300.12125pt>
-File: ../women_desc.png Graphic file (type png)
-<use ../women_desc.png>
-Package pdftex.def Info: ../women_desc.png  used on input line 143.
-(pdftex.def)             Requested size: 516.73338pt x 206.5664pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 	\documentclass
+                     [11pt, oneside]{article}   	% use "amsart" instead of "...
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 143--144
- [][] 
- []
+? 
+./PS2.tex:112: Emergency stop.
+ ...                                              
+                                                  
+l.112 	\documentclass
+                     [11pt, oneside]{article}   	% use "amsart" instead of "...
 
-[4 <../women_desc.png>] (./PS2_answers.R) [5] [6]
-<Histogramlifespan.jpeg, id=146, 401.5pt x 291.0875pt>
-File: Histogramlifespan.jpeg Graphic file (type jpg)
-<use Histogramlifespan.jpeg>
-Package pdftex.def Info: Histogramlifespan.jpeg  used on input line 192.
-(pdftex.def)             Requested size: 401.49901pt x 291.08678pt.
- (./PS2_answers.R) [7 <./Histogramlifespan.jpeg>]
-<lifespanvsthorax.jpeg, id=160, 401.5pt x 291.0875pt>
-File: lifespanvsthorax.jpeg Graphic file (type jpg)
-<use lifespanvsthorax.jpeg>
-Package pdftex.def Info: lifespanvsthorax.jpeg  used on input line 212.
-(pdftex.def)             Requested size: 401.49901pt x 291.08678pt.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-Overfull \hbox (8.94058pt too wide) in paragraph at lines 212--213
-[][] 
- []
-
-(./PS2_answers.R) (./PS2_answers.R [8 <./lifespanvsthorax.jpeg>])
-(./PS2_answers.R) [9] (./PS2_answers.R) (./PS2_answers.R [10])
+ 
+Here is how much of TeX's memory you used:
+ 23325 strings out of 492616
+ 403368 string characters out of 6129482
+ 770101 words of memory out of 5000000
+ 26777 multiletter control sequences out of 15000+600000
+ 15070 words of font info for 62 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,8n,52p,3235b,2183s stack positions out of 5000i,500n,10000p,200000b,80000s
+./PS2.tex:112:  ==> Fatal error occurred, no output PDF file produced!
+nswers.R) [9] (./PS2_answers.R) (./PS2_answers.R [10])
 <confpredicplot2.jpeg, id=240, 451.6875pt x 328.22626pt>
 File: confpredicplot2.jpeg Graphic file (type jpg)
 <use confpredicplot2.jpeg>

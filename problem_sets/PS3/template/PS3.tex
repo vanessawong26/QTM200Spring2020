@@ -84,10 +84,19 @@
 \vspace{.25cm}
 \noindent We are interested in knowing how the difference in campaign spending between incumbent and challenger affects the incumbent's vote share. 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.	\vspace{5cm}
-		
-		\item Make a scatterplot of the two variables and add the regression line. 	\vspace{7cm}
-		\item Save the residuals of the model in a separate object.	\vspace{7cm}
+		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.	
+		\item[] Linear model: y = 0.5790 + 0.0417x
+		\lstinputlisting[language=R, firstline=39, lastline=61]{PS3_answers.R}
+		\vspace{1cm}
+		\item Make a scatterplot of the two variables and add the regression line. 
+		\begin{itemize}
+			\item []
+		\includegraphics[width=0.75\textwidth]{Rplot.png}
+		\end{itemize}
+		\lstinputlisting[language=R, firstline=64, lastline=66]{PS3_answers.R}
+		\vspace{1cm}
+		\item Save the residuals of the model in a separate object.	\vspace{1cm}
+		\lstinputlisting[language=R, firstline=69, lastline=70]{PS3_answers.R}
 		\item Write the prediction equation.
 	\end{enumerate}
 	
@@ -96,8 +105,13 @@
 \section*{Question 2 (20 points)}
 \noindent We are interested in knowing how the difference between incumbent and challenger's spending and the vote share of the presidential candidate of the incumbent's party are related.	\vspace{.25cm}
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	\vspace{5cm}
-		\item Make a scatterplot of the two variables and add the regression line. 	\vspace{5cm}
+		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	\vspace{1cm}
+		\item[] Linear model: y = 0.5076 + 0.0238x
+		\lstinputlisting[language=R, firstline=82, lastline=95]{PS3_answers.R}
+		\item Make a scatterplot of the two variables and add the regression line.
+		\item[]
+		\includegraphics[width=0.75\textwidth]{Q2.png}
+		\lstinputlisting[language=R, firstline=98, lastline=100]{PS3_answers.R}
 		\item Save the residuals of the model in a separate object.	\vspace{5cm}
 		\item Write the prediction equation.
 	\end{enumerate}

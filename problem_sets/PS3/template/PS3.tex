@@ -60,13 +60,12 @@
 \newcommand{\Sref}[1]{Section~\ref{#1}}
 \newtheorem{hyp}{Hypothesis}
 
-\title{Problem Set 3}
-\date{Due: February 17, 2020}
+\title{Problem Set 3 Answers}
+\date{Vanessa Wong}
 \author{QTM 200: Applied Regression Analysis}
 
 \begin{document}
 	\maketitle
-	
 	\section*{Instructions}
 	\begin{itemize}
 		\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
@@ -86,18 +85,20 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.	
 		\item[] Linear model: y = 0.5790 + 0.0417x
-		\lstinputlisting[language=R, firstline=39, lastline=61]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=39, lastline=61]{PS3_answers3.R}
 		\vspace{1cm}
 		\item Make a scatterplot of the two variables and add the regression line. 
 		\begin{itemize}
 			\item []
 		\includegraphics[width=0.5\textwidth]{Rplot.png}
 		\end{itemize}
-		\lstinputlisting[language=R, firstline=64, lastline=66]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=64, lastline=66]{PS3_answers3.R}
 		\vspace{1cm}
 		\item Save the residuals of the model in a separate object.	\vspace{1cm}
-		\lstinputlisting[language=R, firstline=69, lastline=70]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=69, lastline=70]{PS3_answers3.R}
 		\item Write the prediction equation.
+		\item[]
+		$$\hat{y} = 0.5790 + 0.0417x$$
 	\end{enumerate}
 	
 \newpage
@@ -107,14 +108,15 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	\vspace{1cm}
 		\item[] Linear model: y = 0.5076 + 0.0238x
-		\lstinputlisting[language=R, firstline=82, lastline=95]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=82, lastline=95]{PS3_answers3.R}
 		\item Make a scatterplot of the two variables and add the regression line.
 		\item[]
 		\includegraphics[width=0.5\textwidth]{Q2.png}
-		\lstinputlisting[language=R, firstline=98, lastline=100]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=98, lastline=100]{PS3_answers3.R}
 		\item Save the residuals of the model in a separate object.	\vspace{1cm}
-		\lstinputlisting[language=R, firstline=103, lastline=104]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=103, lastline=104]{PS3_answers3.R}
 		\item Write the prediction equation.
+		\item[] $$\hat{y} = 0.5076 + 0.0238x$$
 	\end{enumerate}
 	
 	\newpage	
@@ -126,12 +128,13 @@
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{presvote}.
 			\vspace{0.25cm}
 			\item[] Linear model: y= 0.4413 + 0.3880x
-			\lstinputlisting[language=R, firstline=115, lastline= 133]{PS3_answers2.R}
+			\lstinputlisting[language=R, firstline=115, lastline= 133]{PS3_answers3.R}
 		\item Make a scatterplot of the two variables and add the regression line. 
 			\item[]
 			\includegraphics[width=0.5\textwidth]{Q3.png}
-			\lstinputlisting[language=R, firstline=136, lastline=138]{PS3_answers2.R}
+			\lstinputlisting[language=R, firstline=136, lastline=138]{PS3_answers3.R}
 		\item Write the prediction equation.
+		\item[] $$\hat{y} = 0.4413 + 0.3880x$$
 	\end{enumerate}
 	
 
@@ -141,26 +144,31 @@
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.
 		\item[] Linear model: y = -4.860 x $10^{-18} + 0.2569x$
-		\lstinputlisting[language=R, firstline=149, lastline=168]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=149, lastline=168]{PS3_answers3.R}
 		\item Make a scatterplot of the two residuals and add the regression line.
 		\item[]
 		\includegraphics[width=0.5\textwidth]{Q4.png}
-		\lstinputlisting[language=R, firstline=171, lastline=173]{PS3_answers2.R}
+		\lstinputlisting[language=R, firstline=171, lastline=173]{PS3_answers3.R}
 		\item Write the prediction equation.
+		\item[] $\hat{y}$ = -4.860 x $10^{-18} + 0.2569x$
+
 	\end{enumerate}
 	
-	\newpage	
-
 \section*{Question 5 (20 points)}
 \noindent What if the incumbent's vote share is affected by both the president's popularity and the difference in spending between incumbent and challenger? 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	\vspace{5cm}
-		\item Write the prediction equation.	\vspace{5cm}
-		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?	\vspace{5cm}
-	%	\item Reflect on your finding. Don't write anything. Just think about it.
+		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	
+		\item[] 
+		\lstinputlisting[language=R, firstline=187, lastline=204]{PS3_answers3.R}
+		\item Write the prediction equation.	
+		\item[] $$\hat{y} = 0.4486 + 0.0355x_{difflog} + 0.2569x_{presvote}$$
+		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?	
+		\item[] Aswered in tex file
+	%	\item Reflect on your finding. Don't write anything. Just think about it. # the slope of the regression of voteshare on presvote is the same as the slope of of the regression of Q1 residuals on Q2 residuals. i think this is the case because the regression of Q1 residuals on Q2 residuals tells us how much variation in presvote *and* voteshare is not explained by difflog. in both cases, the slopes describe the relationship between voteshare and presvote, while holding difflog constant. As such, they have the same slope.  
 	\end{enumerate}
 
-\lstinputlisting{PS3_answers2.R}
-
-
+\begin{itemize}
+\item[NOTE:] The final R file with answers is called PS3\_answers4. I had to resave the file multiple times because I was making changes to the R file as I was compiling.
+\end{itemize}
+\lstinputlisting{PS3_answers4.R}
 \end{document}

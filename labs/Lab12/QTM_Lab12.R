@@ -14,7 +14,7 @@ detachAllPackages <- function() {
 }
 detachAllPackages()
 # set wd
-setwd('~/Documents/GitHub/QTM200Spring2020/labs/Lab12')
+setwd('~/GitHub/QTM200Spring2020/labs/Lab12')
 
 # load libraries
 pkgTest <- function(pkg){
@@ -41,17 +41,24 @@ lapply(c("faraway"), pkgTest)
 load("Busby_Football.RData")
 colnames(x)
 
-
 # 1. Run a linear model with papprove as a dependent variable and 
 #    Post, osu, and the interaction of the two as independent variables.
 
-
+lm(papprove ~ Post+osu + Post:osu, data=x)
 
 
 # 2. Answer the following questions based on the results.
 
 # 2a. What is the predicted presidential approval of OSU students who received
 #     the survey BEFORE the game?
+
+# after = 1
+# before = 0
+# osu = 1
+# non-osu = 0
+
+# equation: papprove = 4.5619 - 0.3780x
+# x = 1 bc OSU students 
 
 
 # 2b. What is the predicted presidential approval of OSU students who received

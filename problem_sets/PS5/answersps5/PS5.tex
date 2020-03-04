@@ -61,7 +61,7 @@
 \newtheorem{hyp}{Hypothesis}
 
 \title{Problem Set 5}
-\date{Due: March 4, 2020}
+\date{Vanessa Wong}
 \author{QTM 200: Applied Regression Analysis}
 
 \begin{document}
@@ -85,13 +85,31 @@
 Answer the following questions:
 \vspace{.5cm}
 \begin{enumerate}[(a)]
-	 \item Check the constant variance assumption for the errors by plotting the residuals versus the fitted values. \newpage
-	\item Check the normality assumption with a Q-Q plot of the studentized residuals. \vspace{6cm}
-	
-	\item Check for large leverage points by plotting the $h$ values. \vspace{6cm}
-	\item Check for outliers by running an \texttt{outlierTest}. \vspace{6cm}
+	 \item Check the constant variance assumption for the errors by plotting the residuals versus the fitted values. 
+	 \lstinputlisting[firstline=49, lastline=51]{PS5.R}
+	 \item [-] After fitted value (y hat) equals ~ 45, variance seems to increase/residuals deviate more from 0. variance does not appear to be constant.
+	 	\item [-]
+	 \includegraphics[width=7cm]{residual.png}
+	\item Check the normality assumption with a Q-Q plot of the studentized residuals. 
+	\lstinputlisting[firstline=54, lastline=55]{PS5.R}
+	\item[-] The normality assumption appears to be met because almost all points are very tightly clustered along the QQ line.
+		\item [-]
+	\includegraphics[width=7cm]{Qqplotps5.png}
+	\item Check for large leverage points by plotting the $h$ values.
+	\lstinputlisting[firstline=58, lastline=62]{PS5.R}
+	\item[-] Using the average hat value as a threshold (thresholds = 2 * hbar and 3 * hbar), there are 4 high leverage points in this dataset: observations 31, 33, 35, and 42. These four points have are potentially influential i.e. have the potential to greatly affect the regression model.
+	\item [-]
+	\includegraphics[width=7cm]{Hatvalueplot.png}
+	\item Check for outliers by running an \texttt{outlierTest}. \lstinputlisting[firstline=67, lastline=67]{PS5.R}
+	\item [-] According to outlier test, observation 24 has an adjusted (Bonferroni) p-value ~ 0. therefore, observation 24 is an extreme residual in this model.
 	\item Check for influential points by creating a "Bubble plot" with the hat-values and studentized residuals.
+	\lstinputlisting[firstline=71, lastline=76]{PS5.R}
+	\item [-] Observations 31, 33, 35, and 42 are influential points because all 4 are above at least one threshold for studentized residuals and hat values. This means all 4 points are both high leverage and are regression outliers, making them influential points (they greatly affect the regression model).Observation 24 was also identified because while it did not pass any of the hat value thresholds, it has an unusally large Cook's distance.
+		\item [-]
+	\includegraphics[width=7cm]{Bubble.png}
 	% \item N/A.
 \end{enumerate}
+
+\lstinputlisting{PS5.R}
 
 \end{document}

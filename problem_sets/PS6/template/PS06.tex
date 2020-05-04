@@ -62,7 +62,7 @@
 
 \title{Problem Set 6}
 \date{Due: May 6, 2020}
-\author{QTM 200: Applied Regression Analysis}
+\author{Vanessa Wong}
 
 \begin{document}
 	\maketitle
@@ -104,27 +104,42 @@
 \begin{enumerate}
 	\item
 	We are interested in predicting the cholesterol category based on sex and fat intake.
-	\begin{enumerate}
+	\begin{itemize}
 		\item
 		Fit an additive model. Provide the summary output, the global null hypothesis, and $p$-value. Please describe the results and provide a conclusion.
+		\item [-] prediction equation: y = -4.759 + 1.357sex + 0.066fat
+		\lstinputlisting[firstline=41, lastline=42]{PS6_answers.R}
+		\item[-] summary output
+		\lstinputlisting[firstline=53, lastline=72]{PS6_answers.R}
+		\item[-] global null: beta\textsubscript{fat} = beta\textsubscript{sex} = 0
+		\item[-] p \textless 2.2e-16. p \textless 0.01 therefore at least one beta is not equal to 0 
+		\lstinputlisting[firstline=45, lastline=47]{PS6_answers.R}
+		
 		%\item
 		%How many iterations did it take to find the maximum likelihood estimates?
-	\end{enumerate}
+	\end{itemize}
 	
 	\item
 	If explanatory variables are significant in this model, then
 	\begin{enumerate}
 		\item
 		For women, how does increasing their fat intake by 1 gram per day change their odds on being in the high cholesterol group? (Interpretation of a coefficient)
+		\item[-] For women, increasing fat intake by one gram is associated with an increase in the odds of being in the high cholesterol group by a multiplicative factor of 1.068 (e\textsuperscript{0.0657})
 		\item
 		For men, how does increasing their fat intake by 1 gram per day change their odds on being in the high cholesterol group? (Interpretation of a coefficient)
+		\item[-] For men, increasing fat intake by one gram is associated with an increase in the odds of being in the high cholesterol group by a multiplicative factor of 1.068 (e\textsuperscript{0.0657})
 		\item
 		What is the estimated probability of a woman with a fat intake of 100 grams per day being in the high cholesterol group? 
+		\item[-] The estimated probability of a woman with a fat intake of 100 grams per day being in the high cholesterol group is 86.3\%
+		\lstinputlisting[firstline=84, lastline=88]{PS6_answers.R}
+		
 		\item
 		Would the answers to 2a and 2b potentially change if we included the interaction term in this model? Why? 
 		\begin{itemize}
 			\item Perform a test to see if including an interaction is appropriate.
 		\end{itemize}
+		\item [-] p = 0.6454 \textgreater 0.05. There is no evidence that including an interactive term of sex and fat intake would be a significant predictor of the odds of being in the high cholesterol group. Therefore, the answers to 2a and 2b would likely not change if the interactive term were included.
+		\lstinputlisting[firstline=93, lastline=95]{PS6_answers.R}
 %		\item
 %		If you consider all people who have a given fat intake, how does changing from being a female to a male change the odds on being in the high cholesterol group? (For additive model)
 	
@@ -159,7 +174,21 @@
 
 \begin{enumerate}
 	\item Construct and interpret an unordered multinomial logit with \texttt{GDPWdiff} as the output and "no change" as the reference category, including the estimated cutoff points and coefficients.
+	\item[-] In a given country, there is an increase in baseline odds of a positive GDP difference by 5.865 times when that country has a democratic government
+	\item[-] In a given country, there is an increase in baseline odds of a negative GDP difference by 3.972 times when that country has a democratic government
+	\item[-] In a given country, there is an increase in baseline odds of a positive GDP difference by 97.156 times when that country has a ratio of fuel to total exports greater than 50\% in 1984-86
+	\item[-] In a given country, there is an increase in baseline odds of a negative GDP difference by 119.577 times when that country has a ratio of fuel to total exports greater than 50\% in 1984-86
+	\item [-] cutoff points, coefficients
+	\lstinputlisting[firstline=128, lastline=149]{PS6_answers.R}
+	\lstinputlisting[firstline=103, lastline=110]{PS6_answers.R}
 	\item Construct and interpret an ordered multinomial logit with \texttt{GDPWdiff} as the outcome variable, including the estimated cutoff points and coefficients.
+	\item[-] The odds of having a positive GDP change when switching from a non-democratic to a democratic government multiply by a factor of 1.489. 
+	\item[-] The odds of having a positive GDP change, if that country has an average ratio of fuel:total exports that is greater than 50\%, multiplies by a factor of 0.8197.
+	\item[-] coefficients:
+	\lstinputlisting[firstline=157, lastline=161]{PS6_answers.R}
+	\item[-] intercepts:
+	\lstinputlisting[firstline=163, lastline=167]{PS6_answers.R}
+	\lstinputlisting[firstline=154, lastline=156]{PS6_answers.R}
 	
 	
 \end{enumerate}

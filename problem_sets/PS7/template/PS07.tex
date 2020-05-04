@@ -62,7 +62,7 @@
 
 \title{Problem Set 7}
 \date{Due: May 6, 2020}
-\author{QTM 200: Applied Regression Analysis}
+\author{Vanessa Wong}
 
 \begin{document}
 	\maketitle
@@ -83,12 +83,23 @@
 \begin{enumerate}
 	\item [(a)]
 	Run a Poisson regression because the outcome is a count variable. Is there evidence that PAN presidential candidates visit swing districts more? Provide a test statistic and p-value.
-	\newpage
+	\lstinputlisting[firstline=44, lastline=45]{PS7_answers2.R}
+	\item[-] p = 0.161, z = -1.402
+	\item[-] p \textgreater 0.05, therefore swing district status is not a statiscally reliable predictor of the number of visits the winning PAN candidate made in 2006. thus there is no evidence that PAN presidential candidates' visits swing districts more.
 	\item [(b)]
 	Interpret the \texttt{marginality.06} and \texttt{PAN.governor.06} coefficients.
+	\lstinputlisting[firstline=54, lastline=54]{PS7_answers2.R}
+	\item[-] marginality coef. (exp) = 0.1226841
+	\item[-] marginality coef (non-exp) = -2.0981
+	\item[-] interpetation: holding all other variables constant, a one unit increase in poverty is associated with an average decrease in district visits by a multiplicative factor of 0.1227.
+	\item[-] PAN.governor coef. (exp) = 0.8127638
+	\item[-] PAN.governor coef (non-exp) = -0.2073
+	\item[-] interpretation: holding all other variables constant, a district's having a PAN-affiliated governor is associated with an average decrease in district visits by a multiplicative factor of 0.8128.
 	
 	\item [(c)]
 	Provide the estimated mean number of visits from the winning PAN presidential candidate for a hypothetical district that was competitive (\texttt{competitive.district}=1), had an average poverty level (\texttt{marginality.06} = 0), and a PAN governor (\texttt{PAN.governor.06}=1).
+	\lstinputlisting[firstline=67, lastline=68]{PS7_answers2.R}
+	\item[-] the estimated mean number of visits from winning PAN presidential candidates under these conditions is 0.01008 (approximately 0 visits).
 	
 \end{enumerate}
 	
@@ -99,14 +110,30 @@
 \begin{enumerate}
 	\item
 	Create a "pooled" linear model where you regress \texttt{Days} on the outcome \texttt{Reaction}. Make sure to run regression diagnostics to check if the variance around the regression line is equal for every year.
+	\lstinputlisting[firstline=77, lastline=78]{PS7_answers2.R}
+	\item[-] model: y = 251.405 + 10.467x
+	\lstinputlisting[firstline=80, lastline=80]{PS7_answers2.R}
+	\item[-] based on residuals vs. fitted values plot, residuals (variance) appears to be constant based on normal Q-Q plot, normality assumption appears to be met as all points are clustered very tightly around the QQ line.
+	
 	
 	\item Fit an "un-pooled" regression model with varying intercepts for patient (include an additive factor for patient) and save the fitted values.
+	\lstinputlisting[firstline=86, lastline=87]{PS7_answers2.R}
+	\item[-] fitted values:
+	\lstinputlisting[firstline=88, lastline=110]{PS7_answers2.R}
 	
 	\item Fit a "un-pooled" regression model with varying slopes of time (days) for patients (include only the interaction \texttt{Days:Subject}) and save the fitted values.
+	\lstinputlisting[firstline=114, lastline=115]{PS7_answers2.R}
+	\item[-] fitted values:
+	\lstinputlisting[firstline=116, lastline=136]{PS7_answers2.R}
 	
 	\item Fit an "un-pooled" regression model with varying intercepts for patients with varying slopes of time (days) by patient (include the interaction and constituent terms of \texttt{Days} and \texttt{Subject}, \texttt{Days + Subject + Days:Subject}) and save the fitted values.
+	\lstinputlisting[firstline=139, lastline=140]{PS7_answers2.R}
+	\item[-] fitted values:
+	\lstinputlisting[firstline=141, lastline=178]{PS7_answers2.R}
 	
 	\item Fit a "semi-pooled" multi-level model with varying-intercept for subject and varying-slope of day by subject. Is it worthwhile for us to run a multi-level model with varying effects of time by subject? Why? Compare your model from part 5 to the other completely "pooled" or "un-pooled models".
+	\lstinputlisting[firstline=180, lastline=188]{PS7_answers2.R}
+	\item[-] No, because the semipooled multilevel model appears to be pretty similar to the pooled and unpooled models, especially the unpooled model.
 
 \end{enumerate}
 
